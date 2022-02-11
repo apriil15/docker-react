@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  web:
+    image: web # image name
+
+    # default 會去找 Dockerfile 如果檔名像 Dockerfile.dev 要這樣寫
+    build:
+      context: . # same layer
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ~/project/frontend:/app
+  tests:
+    image: web-test
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ~/project/frontend:/app
+    command: npm run test
