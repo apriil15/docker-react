@@ -4,3 +4,4 @@
 /.gitignore
 /Dockerfile.dev
 /README.md
+.vscode
