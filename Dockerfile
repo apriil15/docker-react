@@ -13,6 +13,6 @@ RUN npm run build
 
 # stage2: setup nginx
 FROM nginx
-
+EXPOSE 80
 # /usr/share/nginx/html is from nginx documentation
 COPY --from=build /app/build /usr/share/nginx/html
